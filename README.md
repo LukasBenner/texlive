@@ -1,4 +1,4 @@
-# TeXLive minimal on Python
+# Minimal TeXLive 2022
 
 ## Particularities
 

@@ -26,4 +26,4 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: lukasbenner/texlive:${{ steps.meta.outputs.tags }}
+        tags: lukasbenner/texlive:${{github.ref_name}}

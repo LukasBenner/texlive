@@ -27,3 +27,14 @@ jobs:
       with:
         push: true
         tags: lukasbenner/texlive:${{github.ref_name}}
+        
+    - name: push README to Dockerhub
+      uses: christian-korneck/update-container-description-action@v1
+      env:
+        DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+        DOCKER_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
+      with:
+        destination_container_repo: lukasbenner/texlive
+        provider: dockerhub
+        short_description: 'Minimal docker image for building latex documents 📄'
+        readme_file: 'README.md'

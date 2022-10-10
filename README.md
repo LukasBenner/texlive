@@ -1,4 +1,5 @@
 [![Docker Image CI](https://github.com/LukasBenner/texlive/actions/workflows/docker-image.yml/badge.svg)](https://github.com/LukasBenner/texlive/actions/workflows/docker-image.yml)
+![license](https://img.shields.io/github/license/LukasBenner/texlive)
 
 # Minimal TeXLive 2022
 

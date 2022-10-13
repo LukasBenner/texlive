@@ -26,6 +26,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
+        platforms: linux/amd64,linux/arm64
         tags: lukasbenner/texlive:${{github.ref_name}}
         
     - name: push README to Dockerhub

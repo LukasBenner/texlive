@@ -1,14 +1,12 @@
-FROM debian:sid
+FROM alpine:latest
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8 \
     TEXLIVE_INSTALL_NO_CONTEXT_CACHE=1
 
-RUN apt-get update && \ 
-  apt-get install -y gnupg curl libgetopt-long-descriptive-perl unzip make libdigest-perl-md5-perl wget python3-pygments fontconfig && \ 
-  rm -rf /var/lib/apt/lists/*
+RUN  apk add gnupg curl perl-getopt-long perl-digest-md5 unzip make wget py3-pygments fontconfig
 
 ENV NOPERLDOC=1 \
-    PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
+    PATH=/usr/local/texlive/2022/bin/x86_64-linuxmusl:$PATH
 
 ARG scheme=scheme-full
 

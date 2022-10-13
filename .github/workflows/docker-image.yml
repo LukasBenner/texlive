@@ -22,12 +22,29 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     
-    - name: Build and push
+    - name: Build full
       uses: docker/build-push-action@v3
       with:
         push: true
         platforms: linux/amd64,linux/arm64
-        tags: lukasbenner/texlive:${{github.ref_name}}
+        tags: lukasbenner/texlive:full_${{github.ref_name}}
+        build-args: scheme=scheme-full
+        
+    - name: Build small
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        platforms: linux/amd64,linux/arm64
+        tags: lukasbenner/texlive:small_${{github.ref_name}}
+        build-args: scheme=scheme-small
+  
+    - name: Build medium
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        platforms: linux/amd64,linux/arm64
+        tags: lukasbenner/texlive:medium_${{github.ref_name}}
+        build-args: scheme=scheme-medium
         
     - name: push README to Dockerhub
       uses: christian-korneck/update-container-description-action@v1

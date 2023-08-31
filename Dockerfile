@@ -6,11 +6,11 @@ ENV LANG=C.UTF-8 LC_ALL=C.UTF-8 \
 RUN  apk add gnupg curl perl-getopt-long perl-digest-md5 unzip make wget py3-pygments fontconfig
 
 ENV NOPERLDOC=1 \
-    PATH=/usr/local/texlive/2022/bin/x86_64-linuxmusl:$PATH
+    PATH=/usr/local/texlive/2023/bin/x86_64-linuxmusl:$PATH
 
 ARG scheme=scheme-full
 
-LABEL maintainer="Lukas Benner <lukasbenner@hl-benner.de>"
+LABEL maintainer="Lukas Benner <lukasbenner@mailbox.org>"
 
 WORKDIR /
 

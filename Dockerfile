@@ -14,7 +14,7 @@ LABEL maintainer="Lukas Benner <lukasbenner@mailbox.org>"
 
 WORKDIR /
 
-RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \ 
+RUN wget https://ctan.space-pro.be/tex-archive/systems/texlive/tlnet/install-tl-unx.tar.gz && \ 
   tar xzf install-tl-unx.tar.gz && rm install-tl-unx.tar.gz && \ 
   cd install-tl* && \ 
   echo "selected_scheme ${scheme}" > install.profile && \ 
